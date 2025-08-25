@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Furioso Energy Drink</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="globaltawlind.css">
+  <script src="function.js"></script>
+  <meta name="description" content="Furioso Energy Drink - Bebida energética com sabores únicos.">
+<meta name="keywords" content="energy drink, energético, furioso, bebida, produto, sabor, RFK">
+<meta name="author" content="Seu Nome">
+</head>
+<body class="bg-gray-900">
+    <!-- Header -->
+    <header class="bg-black p-4 shadow-lg">
+        <div class="flex items-center justify-between max-w-7xl mx-auto">
+            <!-- Logo -->
+            <img src="images/logo3.png" alt="Logo da empresa" class="h-12 invert brightness-200 sm:h-16 md:h-20 lg:h-24">
+
+            <!-- Menu de navegação -->
+            <nav class="hidden md:block">
+                <ul class="flex gap-6">
+                    <li>
+                        <a href="#quemsomos" class="text-white hover:text-red-400 flex items-center gap-2 transition-colors duration-300">
+                            Quem Somos <i class="fa-solid fa-building"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#nossoproduto" class="text-white hover:text-red-400 flex items-center gap-2 transition-colors duration-300">
+                            Nossos Produtos <i class="fa-solid fa-wine-bottle"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#contato" class="text-white hover:text-red-400 flex items-center gap-2 transition-colors duration-300">
+                            Contato <i class="fa-solid fa-headset"></i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Menu mobile -->
+            <button class="md:hidden text-white text-xl" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars" id="menuIcon"></i>
+            </button>
+        </div>
+
+        <!-- Menu mobile dropdown -->
+        <nav class="md:hidden mt-4 hidden" id="mobileMenu">
+            <ul class="flex flex-col gap-4 bg-gray-800 p-4 rounded-lg">
+                <li>
+                    <a href="#quemsomos" class="text-white hover:text-red-400 flex items-center gap-2 transition-colors duration-300">
+                        Quem Somos <i class="fa-solid fa-building"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#nossoproduto" class="text-white hover:text-red-400 flex items-center gap-2 transition-colors duration-300">
+                        Nosso Produto <i class="fa-solid fa-wine-bottle"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#contato" class="text-white hover:text-red-400 flex items-center gap-2 transition-colors duration-300">
+                        Contato <i class="fa-solid fa-headset"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-red-800 via-red-900 to-black text-white">
+        <div class="max-w-7xl mx-auto px-4 py-12 text-center">
+            <h1 class="text-4xl md:text-6xl font-extrabold tracking-wide leading-tight mb-4">
+                Furioso Energy Drink
+            </h1>
+            <p class="text-lg md:text-2xl font-light text-gray-300 mb-6">
+                Para quem busca máxima energia com sabor deliciosamente energizante
+            </p>
+            <div class="flex justify-center gap-4 flex-wrap">
+                <button class="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-300">
+                    Conheça nossos produtos
+                </button>
+                <button class="border-2 border-white text-white hover:bg-white hover:text-red-900 px-6 py-3 rounded-lg font-semibold transition-all duration-300">
+                    Saiba mais
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galeria de Produtos -->
+    <section id="nossoproduto" class="relative bg-gradient-to-r from-red-800 via-red-900 to-black text-white py-16">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center uppercase tracking-wider">
+                Galeria de Produtos
+            </h2>
+
+            <!-- Container do carrossel -->
+            <div class="relative group">
+                <!-- Botões de navegação -->
+                <button
+                    class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/70 hover:bg-black/90 text-white p-3 rounded-full z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    onclick="scrollCarousel(-1)"
+                    aria-label="Produto anterior">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button
+                    class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/70 hover:bg-black/90 text-white p-3 rounded-full z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    onclick="scrollCarousel(1)"
+                    aria-label="Próximo produto">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+
+                <!-- Carrossel de produtos -->
+                <div id="carousel" class="flex gap-6 overflow-x-auto scroll-smooth px-4 scrollbar-thin">
+                    <!-- Produtos -->
+                    <div class="min-w-[10px] flex-shrink-0 bg-black/20 rounded-xl p-4 hover:scale-105 hover:bg-black/30 transition-all duration-300">
+                        <img src="images/produto2.webp" alt="Produto 2" class="w-full h-90 object-cover rounded-lg mb-4">
+                        <h3 class="text-center text-lg font-semibold mb-3">Furioso Melancia e Morango</h3>
+                        <div class="flex flex-wrap justify-center gap-2">
+                            <button class="px-4 py-2 border border-white text-white rounded-full text-sm hover:bg-white hover:text-red-900 transition-all duration-300">250ml</button>
+                            <button class="px-4 py-2 border border-white text-white rounded-full text-sm hover:bg-white hover:text-red-900 transition-all duration-300">269ml</button>
+                            <button class="px-4 py-2 border border-white text-white rounded-full text-sm hover:bg-white hover:text-red-900 transition-all duration-300">473ml</button>
+                            <button class="px-4 py-2 border border-white text-white rounded-full text-sm hover:bg-white hover:text-red-900 transition-all duration-300">2L</button>
+                        </div>
+                    </div>
+
+                    <div class="min-w-[10px] flex-shrink-0 bg-black/20 rounded-xl p-4 hover:scale-105 hover:bg-black/30 transition-all duration-300">
+                        <img src="images/produto3.webp" alt="Produto 3" class="w-full h-90 object-cover rounded-lg mb-4">
+                        <h3 class="text-center text-lg font-semibold mb-3">Furioso Maça Verde e Melão</h3>
+                        <div class="flex flex-wrap justify-center gap-2">
+                            <button class="px-4 py-2 border border-white text-white rounded-full text-sm hover:bg-white hover:text-red-900 transition-all duration-300">250ml</button>
+                            <button class="px-4 py-2 border border-white text-white rounded-full text-sm hover:bg-white hover:text-red-900 transition-all duration-300">269ml</button>
+                            <button class="px-4 py-2 border border-white text-white rounded-full text-sm hover:bg-white hover:text-red-900 transition-all duration-300">473ml</button>
+                            <button class="px-4 py-2 border border-white text-white rounded-full text-sm hover:bg-white hover:text-red-900 transition-all duration-300">2L</button>
+                        </div>
+                    </div>
+
+                    <div class="min-w-[10px] flex-shrink-0 bg-black/20 rounded-xl p-4 hover:scale-105 hover:bg-black/30 transition-all duration-300">
+                        <img src="images/produto4.webp" alt="Produto 4" class="w-full h-90 object-cover rounded-lg mb-4">
+                        <h3 class="text-center text-lg font-semibold mb-3">Furioso Tropical</h3>
+                        <div class="flex flex-wrap justify-center gap-2">
+                            <button class="px-4 py-2 border border-white text-white rounded-full text-sm hover:bg-white hover:text-red-900 transition-all duration-300">250ml</button>
+                            <button class="px-4 py-2 border border-white text-white rounded-full text-sm hover:bg-white hover:text-red-900 transition-all duration-300">269ml</button>
+                            <button class="px-4 py-2 border border-white text-white rounded-full text-sm hover:bg-white hover:text-red-900 transition-all duration-300">473ml</button>
+                            <button class="px-4 py-2 border border-white text-white rounded-full text-sm hover:bg-white hover:text-red-900 transition-all duration-300">2L</button>
+                        </div>
+                    </div>
+
+                    <div class="min-w-[10px] flex-shrink-0 bg-black/20 rounded-xl p-4 hover:scale-105 hover:bg-black/30 transition-all duration-300">
+                        <img src="images/produto5.webp" alt="Produto 5" class="w-full h-90 object-cover rounded-lg mb-4">
+                        <h3 class="text-center text-lg font-semibold mb-3">Furioso Melância e Morango Zero</h3>
+                        <div class="flex flex-wrap justify-center gap-2">
+                            <button class="px-4 py-2 border border-white text-white rounded-full text-sm hover:bg-white hover:text-red-900 transition-all duration-300">250ml</button>
+                            <button class="px-4 py-2 border border-white text-white rounded-full text-sm hover:bg-white hover:text-red-900 transition-all duration-300">269ml</button>
+                            <button class="px-4 py-2 border border-white text-white rounded-full text-sm hover:bg-white hover:text-red-900 transition-all duration-300">473ml</button>
+                            <button class="px-4 py-2 border border-white text-white rounded-full text-sm hover:bg-white hover:text-red-900 transition-all duration-300">2L</button>
+                        </div>
+                    </div>
+
+                    <div class="min-w-[10px] flex-shrink-0 bg-black/20 rounded-xl p-4 hover:scale-105 hover:bg-black/30 transition-all duration-300">
+                        <img src="images/produto6.webp" alt="Produto 6" class="w-full h-90 object-cover rounded-lg mb-4">
+                        <h3 class="text-center text-lg font-semibold mb-3">Furioso Uva Verde e Pêssego</h3>
+                        <div class="flex flex-wrap justify-center gap-2">
+                            <button class="px-4 py-2 border border-white text-white rounded-full text-sm hover:bg-white hover:text-red-900 transition-all duration-300">250ml</button>
+                            <button class="px-4 py-2 border border-white text-white rounded-full text-sm hover:bg-white hover:text-red-900 transition-all duration-300">269ml</button>
+                            <button class="px-4 py-2 border border-white text-white rounded-full text-sm hover:bg-white hover:text-red-900 transition-all duration-300">473ml</button>
+                            <button class="px-4 py-2 border border-white text-white rounded-full text-sm hover:bg-white hover:text-red-900 transition-all duration-300">2L</button>
+                        </div>
+                    </div>
+
+                    <div class="min-w-[10px] flex-shrink-0 bg-black/20 rounded-xl p-4 hover:scale-105 hover:bg-black/30 transition-all duration-300">
+                        <img src="images/produto7.webp" alt="Produto 7" class="w-full h-90 object-cover rounded-lg mb-4">
+                        <h3 class="text-center text-lg font-semibold mb-3">Furioso Tradicional Zero</h3>
+                        <div class="flex flex-wrap justify-center gap-2">
+                            <button class="px-4 py-2 border border-white text-white rounded-full text-sm hover:bg-white hover:text-red-900 transition-all duration-300">250ml</button>
+                            <button class="px-4 py-2 border border-white text-white rounded-full text-sm hover:bg-white hover:text-red-900 transition-all duration-300">269ml</button>
+                            <button class="px-4 py-2 border border-white text-white rounded-full text-sm hover:bg-white hover:text-red-900 transition-all duration-300">473ml</button>
+                            <button class="px-4 py-2 border border-white text-white rounded-full text-sm hover:bg-white hover:text-red-900 transition-all duration-300">2L</button>
+                        </div>
+                    </div>
+
+                    <div class="min-w-[10px] flex-shrink-0 bg-black/20 rounded-xl p-4 hover:scale-105 hover:bg-black/30 transition-all duration-300">
+                        <img src="images/produto8.webp" alt="Produto 8" class="w-full h-90 object-cover rounded-lg mb-4">
+                        <h3 class="text-center text-lg font-semibold mb-3">Furioso Açai</h3>
+                        <div class="flex flex-wrap justify-center gap-2">
+                            <button class="px-4 py-2 border border-white text-white rounded-full text-sm hover:bg-white hover:text-red-900 transition-all duration-300">250ml</button>
+                            <button class="px-4 py-2 border border-white text-white rounded-full text-sm hover:bg-white hover:text-red-900 transition-all duration-300">269ml</button>
+                            <button class="px-4 py-2 border border-white text-white rounded-full text-sm hover:bg-white hover:text-red-900 transition-all duration-300">473ml</button>
+                            <button class="px-4 py-2 border border-white text-white rounded-full text-sm hover:bg-white hover:text-red-900 transition-all duration-300">2L</button>
+                    </div>
+                </div>
+                 <div class="min-w-[10px] flex-shrink-0 bg-black/20 rounded-xl p-4 hover:scale-105 hover:bg-black/30 transition-all duration-300">
+                        <img src="images/produto1.webp" alt="Produto 8" class="w-full h-90 object-cover rounded-lg mb-4">
+                        <h3 class="text-center text-lg font-semibold mb-3">Furioso Tradicional</h3>
+                        <div class="flex flex-wrap justify-center gap-2">
+                            <button class="px-4 py-2 border border-white text-white rounded-full text-sm hover:bg-white hover:text-red-900 transition-all duration-300">250ml</button>
+                            <button class="px-4 py-2 border border-white text-white rounded-full text-sm hover:bg-white hover:text-red-900 transition-all duration-300">269ml</button>
+                            <button class="px-4 py-2 border border-white text-white rounded-full text-sm hover:bg-white hover:text-red-900 transition-all duration-300">473ml</button>
+                            <button class="px-4 py-2 border border-white text-white rounded-full text-sm hover:bg-white hover:text-red-900 transition-all duration-300">2L</button>
+                        </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Quem Somos -->
+    <section id="quemsomos" class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Quem Somos</h2>
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <p class="text-lg mb-6">
+                        A Furioso Energy Drink nasceu da paixão por criar bebidas energéticas que não apenas fornecem energia, mas também uma experiência de sabor única e emocionante.
+                    </p>
+                    <p class="text-lg">
+                        Nossa missão é energizar seus momentos mais intensos com produtos de alta qualidade, desenvolvidos com os melhores ingredientes e tecnologia de ponta.
+                    </p>
+                </div>
+                <div class="text-center">
+                    <img src="images/logo3.png" alt="Logo Furioso" class="h-48 mx-auto invert">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Contato -->
+    <section id="contato" class="bg-black text-white py-16">
+        <div class="max-w-7xl mx-auto px-4">
+          <h6 class="text-2x1 md:text-2xl font-light text-center mb-6">OFEREÇA FURIOSO NO SEU ESTABELECIMENTO</h6>
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Entre em Contato</h2>
+            <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-8 items-start">
+                <!-- Informações de Contato -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Informações de Contato</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-phone text-red-500"></i>
+                            <span>(43) 31745500</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-envelope text-red-500"></i>
+                            <span>comunicacao@rfk.ind.br</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-map-marker-alt text-red-500"></i>
+                            <span>Rua Adelino Bianchini, Nº 900, Gleba Patrimônio, Cambé, PR - Brasil, CEP 86186-019</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Imagem Central -->
+                <div class="flex justify-center lg:order-none md:order-last">
+                    <img src="images/furiosologo.png" alt="Furioso Logo" class="h-48 md:h-80 lg:h-80 object-contain">
+                </div>
+
+                <!-- Formulário de Contato -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Envie uma mensagem</h3>
+                    <form class="space-y-4">
+                        <input type="text" placeholder="Nome" required class="w-full p-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:border-red-500 focus:outline-none transition-colors duration-300">
+                        <input type="email" placeholder="Email" required class="w-full p-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:border-red-500 focus:outline-none transition-colors duration-300">
+                        <div class="grid grid-cols-2 gap-2">
+                            <input type="tel" placeholder="Telefone" class="w-full p-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:border-red-500 focus:outline-none transition-colors duration-300">
+                            <input type="text" placeholder="CEP" class="w-full p-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:border-red-500 focus:outline-none transition-colors duration-300">
+                        </div>
+                        <textarea placeholder="Mensagem" rows="4" required class="w-full p-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:border-red-500 focus:outline-none resize-none transition-colors duration-300"></textarea>
+                        
+                        <!-- Checkbox de consentimento -->
+                        <div class="flex items-start gap-3">
+                            <input type="checkbox" id="newsletter" class="mt-1 text-red-600 bg-gray-800 border-gray-700 rounded focus:ring-red-500 focus:ring-2">
+                            <label for="newsletter" class="text-sm text-gray-300 leading-relaxed">
+                                Quero receber comunicações e promoções do Grupo RFK.
+                            </label>
+                        </div>
+
+                        <button type="submit" class="w-full bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-300 uppercase tracking-wide">
+                            ENVIAR
+                        </button>
+
+                        <!-- Aviso reCAPTCHA -->
+                        <p class="text-xs text-gray-400 text-center leading-relaxed">
+                            Este site é protegido por reCAPTCHA e a 
+                            <a href="https://policies.google.com/privacy" target="_blank" class="text-red-400 hover:text-red-300 underline">Política de Privacidade</a> 
+                            e os 
+                            <a href="https://policies.google.com/terms" target="_blank" class="text-red-400 hover:text-red-300 underline">Termos de Serviço</a> 
+                            do Google se aplicam.
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-8">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-6">
+                <h4 class="text-lg font-semibold mb-4">Nossas Redes Sociais</h4>
+                <div class="flex justify-center gap-6 text-2xl">
+                    <a href="https://www.facebook.com/FuriosoEnergyDrink" class="hover:text-blue-600 transition-colors duration-300" aria-label="Facebook">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+                    <a href="https://www.instagram.com/furiosoenergydrink/" class="hover:text-pink-500 transition-colors duration-300" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="#twitter" class="hover:text-blue-400 transition-colors duration-300" aria-label="Twitter">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+                    <a href="#github" class="hover:text-gray-400 transition-colors duration-300" aria-label="GitHub">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                      <a href="https://www.tiktok.com/@furiosoenergydrink" class="hover:text-blue-400 transition-colors duration-300" aria-label="TikTok">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-6">
+                <ul class="flex justify-center gap-6 text-sm flex-wrap mb-4">
+                    <li><a href="#termos" class="hover:text-red-500 transition-colors duration-300">Termos de Uso</a></li>
+                    <li><a href="#privacidade" class="hover:text-red-500 transition-colors duration-300">Política de Privacidade</a></li>
+                    <li><a href="#contato" class="hover:text-red-500 transition-colors duration-300">Contato</a></li>
+                </ul>
+                <p class="text-sm text-center text-gray-400">
+                    &copy; 2025 Furioso Energy Drink. Grupo RFK. Todos os direitos reservados.
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
